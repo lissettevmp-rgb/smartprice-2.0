@@ -104,7 +104,27 @@ Optimización de Rentabilidad Empresarial mediante Cálculo Diferencial
 
 st.markdown("""
 <div class="card">
-<h3>📝 Información de la Empresa</h3>
+
+<h2>📊 Descripción del Proyecto</h2>
+
+<p>
+SMARTPRICE 2.0 es una aplicación desarrollada en Python y Streamlit que
+permite analizar y optimizar la rentabilidad empresarial mediante el uso
+de herramientas de cálculo diferencial y análisis financiero.
+</p>
+
+<p>
+El sistema evalúa variables como precio de venta, costos de producción,
+capacidad operativa y demanda estimada para generar indicadores de desempeño,
+proyecciones de utilidad y recomendaciones de mejora.
+</p>
+
+<p>
+Su objetivo es apoyar la toma de decisiones estratégicas mediante la
+identificación de escenarios óptimos de producción y precio que permitan
+maximizar la rentabilidad de una organización.
+</p>
+
 </div>
 """, unsafe_allow_html=True)
 
