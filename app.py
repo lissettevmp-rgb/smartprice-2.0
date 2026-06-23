@@ -108,21 +108,9 @@ st.markdown("""
 <h2>📊 Descripción del Proyecto</h2>
 
 <p>
-SMARTPRICE 2.0 es una aplicación desarrollada en Python y Streamlit que
-permite analizar y optimizar la rentabilidad empresarial mediante el uso
-de herramientas de cálculo diferencial y análisis financiero.
-</p>
-
-<p>
-El sistema evalúa variables como precio de venta, costos de producción,
-capacidad operativa y demanda estimada para generar indicadores de desempeño,
-proyecciones de utilidad y recomendaciones de mejora.
-</p>
-
-<p>
-Su objetivo es apoyar la toma de decisiones estratégicas mediante la
-identificación de escenarios óptimos de producción y precio que permitan
-maximizar la rentabilidad de una organización.
+SMARTPRICE 2.0 es una herramienta de apoyo a la toma de decisiones que analiza
+costos, precios, producción y demanda para estimar la rentabilidad de una empresa
+y sugerir mejoras de desempeño.
 </p>
 
 </div>
@@ -154,16 +142,18 @@ with col2:
     )
 
     capacidad = st.number_input(
-        "Capacidad máxima de producción",
-        min_value=1,
-        max_value=10000,
-        step=1
-    )
+    "Capacidad máxima de producción",
+    min_value=0,
+    max_value=10000,
+    value=0,
+    step=1
+)
 
 demanda = st.number_input(
     "Demanda máxima estimada",
-    min_value=1,
+    min_value=0,
     max_value=10000,
+    value=0,
     step=1
 )
 
@@ -179,8 +169,11 @@ if st.button("🚀 Analizar Empresa"):
         rentabilidad = (utilidad / costos) * 100
     else:
         rentabilidad = 0
+    if capacidad > 0:
+        uso_capacidad = (produccion / capacidad) * 100
+    else:
+        uso_capacidad = 0
 
-    uso_capacidad = (produccion / capacidad) * 100
 
     precio_optimo = int(precio * 1.15)
 
